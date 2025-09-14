@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.env
+env/
+# Data/outputs
+project_root/out/
+project_root/logs/
+# OS cruft
+.DS_Store
+Thumbs.db
