@@ -9,3 +9,4 @@ project_root/logs/
 # OS cruft
 .DS_Store
 Thumbs.db
+videos
