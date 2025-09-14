@@ -1,6 +1,48 @@
-seed: 1337
-video_fps: null   # set true FPS once known
-max_jump_px: 25
-min_area_px: 50
-roi_mode: "single"   # single|auto|from_file
-events_csv: "project_root/events/events.csv"   # optional
+project: wormWatcher
+random_seed: 1337
+
+paths:
+  videos: videos
+  events: events
+  out: out
+  logs: logs
+
+outputs:
+  csv_mirror: false        # flip to true if you want CSV alongside Parquet
+  snapshot_stride: 1000    # save a frame every N frames during ingest
+
+ingest:
+  hash_algo: sha256
+  max_frames: null         # set to an int for quick tests
+
+preprocess:
+  stabilize: false
+  denoise: "gaussian"      # or "none"
+  bg_model: "mog2"
+
+detect_track:
+  min_area: 50
+  max_area: 50000
+  max_jump: 40             # px between consecutive frames
+
+features:
+  freeze_speed_thresh: 0.2 # px/frame
+  min_freeze_frames: 15
+
+trials:
+  events_csv: null         # path under events/, or null to infer later
+  baseline_s: 5
+  response_s: 10
+
+detect_track:
+  min_area: 50
+  max_area: 50000
+  max_jump: 40
+  rois:
+    mode: rects
+    rects:
+      - id: worm_right
+        x: 640   # right half (assuming 1280x720)
+        y: 0
+        w: 640
+        h: 720

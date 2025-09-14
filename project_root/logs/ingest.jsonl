@@ -1,0 +1,1 @@
+{"stage":"ingest","video":"videos/D5W1P28Jun25.m4v","exists":true,"opened":true,"t_start":"2025-09-14T05:20:10Z","config":{"snapshot_stride":1000},"level":"INFO","msg":"ok","fps":30.00059678442807,"frames":49265,"width":1280,"height":720,"duration_s":1642.134,"sha256":"3fde04fbcdfdb0ec86f09a078269bf1cde74336eede7b75930698082b34dd078","snapshots":50,"t_end":"2025-09-14T05:21:22Z"}

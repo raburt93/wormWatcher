@@ -1,0 +1,44 @@
+{
+  "project": "wormWatcher (HWVA)",
+  "owner": "raburt93",
+  "visibility": "private",
+  "platform": "Linux",
+  "status_date": "2025-09-14",
+  "accomplishments": {
+    "repo_setup": [
+      "Initialized GitHub repo wormWatcher under raburt93 (private).",
+      "Configured SSH key for write access.",
+      "Added LICENSE (MIT), SECURITY.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, CODEOWNERS."
+    ],
+    "structure": [
+      "Standard project_root layout (videos/, events/, out/{qc,tables,figs}, logs/, src/).",
+      "Makefile with install/sanity/ci/lint targets.",
+      "requirements.txt with core packages.",
+      "Git LFS enabled for videos and QC outputs."
+    ],
+    "code": [
+      "Implemented src/sanity.py for video ingest QC (fps, frame count, hashes, motion energy).",
+      "Sanity.py refactored to be Ruff-clean.",
+      "Added gen_dummy.py (optional dummy video generator)."
+    ],
+    "ci_cd": [
+      "GitHub Actions workflow (ci.yml) runs lint + sanity on PRs/pushes.",
+      "Pre-commit configuration available (Ruff + formatting)."
+    ],
+    "linting": [
+      "Ruff integrated via Makefile (lint/fmt targets).",
+      "All current code passes Ruff checks."
+    ]
+  },
+  "current_limitations": [
+    "No real worm videos in repo yet (EXAMPLE.mp4 placeholder only).",
+    "sanity.py runs but only meaningful once a valid video is added.",
+    "LFS quota may limit large datasets; may need DVC or external storage later."
+  ],
+  "next_steps": [
+    "Drop in first real worm video under project_root/videos/.",
+    "Implement ingest.py to extend sanity → frame snapshots, metadata log.",
+    "Add detect_track.py and features.py modules.",
+    "Wire a make ingest VIDEO=... target."
+  ]
+}

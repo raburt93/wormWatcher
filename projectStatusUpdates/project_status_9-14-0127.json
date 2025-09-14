@@ -1,0 +1,103 @@
+{
+  "project": "wormWatcher (HWVA)",
+  "owner": "raburt93",
+  "visibility": "private",
+  "platform": "Linux",
+  "status_date": "2025-09-14",
+  "accomplishments": {
+    "repo_setup": [
+      "Initialized GitHub repo wormWatcher under raburt93 (private).",
+      "Configured SSH key for write access.",
+      "Added LICENSE (MIT), SECURITY.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, CODEOWNERS."
+    ],
+    "structure": [
+      "Standard project_root layout (videos/, events/, out/{qc,tables,figs}, logs/, src/).",
+      "Makefile with install/sanity/ci/lint targets.",
+      "requirements.txt with core packages.",
+      "Git LFS enabled for videos and QC outputs."
+    ],
+    "code": [
+      "Implemented src/sanity.py for video ingest QC (fps, frame count, hashes, motion energy).",
+      "Sanity.py refactored to be Ruff-clean.",
+      "Added gen_dummy.py (optional dummy video generator)."
+    ],
+    "ci_cd": [
+      "GitHub Actions workflow (ci.yml) runs lint + sanity on PRs/pushes.",
+      "Pre-commit configuration available (Ruff + formatting)."
+    ],
+    "linting": [
+      "Ruff integrated via Makefile (lint/fmt targets).",
+      "All current code passes Ruff checks."
+    ]
+  },
+  "current_limitations": [
+    "No real worm videos in repo yet (EXAMPLE.mp4 placeholder only).",
+    "sanity.py runs but only meaningful once a valid video is added.",
+    "LFS quota may limit large datasets; may need DVC or external storage later."
+  ],
+  "next_steps": [
+    "Drop in first real worm video under project_root/videos/.",
+    "Implement ingest.py to extend sanity \u2192 frame snapshots, metadata log.",
+    "Add detect_track.py and features.py modules.",
+    "Wire a make ingest VIDEO=... target."
+  ],
+  "meta": {
+    "last_updated_utc": "2025-09-14T05:26:08Z",
+    "by": "HWVA (WormWatcher)",
+    "notes": "Updated after successful ingest & diag of D5W1P28Jun25.m4v"
+  },
+  "data_policy": {
+    "logs": "JSONL per stage (logs/<stage>.jsonl)",
+    "manifests": "JSON per stage (out/meta/<stem>.<stage>.json)",
+    "tables": "Parquet canonical in out/tables/, CSV optional mirror via config.outputs.csv_mirror",
+    "qc": "Snapshots and overlays under out/qc/"
+  },
+  "paths": {
+    "videos": "videos/",
+    "events": "events/",
+    "out": "out/",
+    "logs": "logs/",
+    "src": "src/"
+  },
+  "config_defaults": {
+    "outputs.csv_mirror": false,
+    "outputs.snapshot_stride": 1000,
+    "ingest.hash_algo": "sha256"
+  },
+  "pipeline_state": {
+    "ingest": "completed for D5W1P28Jun25.m4v",
+    "preprocess": "pending",
+    "detect_track": "pending",
+    "features": "pending",
+    "trials": "pending",
+    "qc_reports": "pending"
+  },
+  "videos": {
+    "D5W1P28Jun25.m4v": {
+      "sha256": "3fde04fbcdfdb0ec86f09a078269bf1cde74336eede7b75930698082b34dd078",
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0006,
+      "frames": 49265,
+      "duration_s": 1642.134,
+      "ingest": {
+        "manifest": "out/meta/D5W1P28Jun25.ingest.json",
+        "log": "logs/ingest.jsonl",
+        "snapshots_saved": 50,
+        "status": "ok"
+      }
+    }
+  },
+  "makefile": {
+    "targets": {
+      "ingest": "python -m src.ingest config.yaml $(VIDEO)",
+      "diag": "python -m src.diag config.yaml"
+    },
+    "notes": "Two 'diag' targets detected earlier; de-duplicate in Makefile to remove warning."
+  },
+  "clarifying_questions": [
+    "1) Is FPS truly constant (OK to treat as ~30.0006), or should we force 30.0000?",
+    "2) Single worm per arena/ROI in this session? If multiple, will you provide ROIs?",
+    "3) Do you have a CS/US events CSV with absolute onsets (s), or should we plan to infer later (audio/LED)?"
+  ]
+}

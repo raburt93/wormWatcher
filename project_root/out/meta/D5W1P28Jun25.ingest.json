@@ -1,0 +1,13 @@
+{
+  "video_stem": "D5W1P28Jun25",
+  "path": "videos/D5W1P28Jun25.m4v",
+  "sha256": "3fde04fbcdfdb0ec86f09a078269bf1cde74336eede7b75930698082b34dd078",
+  "fps": 30.00059678442807,
+  "frames": 49265,
+  "width": 1280,
+  "height": 720,
+  "duration_s": 1642.134,
+  "source": {
+    "hostname": "parrot"
+  }
+}

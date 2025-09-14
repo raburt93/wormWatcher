@@ -1,0 +1,8 @@
+
+.PHONY: ingest diag
+ingest: ## Ingest a video: make ingest VIDEO=videos/YourFile.m4v
+	@if [ -z "$(VIDEO)" ]; then echo "Usage: make ingest VIDEO=videos/YourFile.m4v"; exit 2; fi
+	python -m src.ingest config.yaml $(VIDEO)
+
+diag: ## Scan logs/manifests for issues
+	python -m src.diag config.yaml
