@@ -17,14 +17,26 @@ ingest:
 
 preprocess:
   stabilize: false
-  denoise: "gaussian"      # or "none"
+  denoise: "gaussian"               # or "none"
+  gaussian_ksize: 5                 # odd
   bg_model: "mog2"
+  bg_history: 500
+  bg_var_threshold: 16
 
 detect_track:
   min_area: 50
   max_area: 50000
-  max_jump: 40             # px between consecutive frames
-
+  max_jump: 40                      # px between consecutive frames
+  morph_kernel: 3
+  timestamps_from_ffprobe: false    # keep false; CFR-like is fine
+  rois:
+    mode: rects
+    rects:
+      - id: worm_right
+        x: 640
+        y: 0
+        w: 640
+        h: 720
 features:
   freeze_speed_thresh: 0.2 # px/frame
   min_freeze_frames: 15
@@ -46,3 +58,5 @@ detect_track:
         y: 0
         w: 640
         h: 720
+qc:
+  overlay_stride: 5     # draw every Nth frame into the MP4/snapshots

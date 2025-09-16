@@ -1,0 +1,28 @@
+{
+  "video": "videos/D5W1P28Jun25.m4v",
+  "sha256": "3fde04fbcdfdb0ec86f09a078269bf1cde74336eede7b75930698082b34dd078",
+  "fps": 30.00059678442807,
+  "duration_s": 1642.134,
+  "min_start_s": 600.0,
+  "expected_trials": 50,
+  "found_trials": 50,
+  "trial_duration_s": 6.0,
+  "lead_s": 1.0,
+  "tail_s": 1.0,
+  "roi": {
+    "mode": "rects",
+    "rects": [
+      {
+        "id": "worm_right",
+        "x": 640,
+        "y": 0,
+        "w": 640,
+        "h": 720
+      }
+    ]
+  },
+  "trials_csv": "out/tables/D5W1P28Jun25_trials.csv",
+  "qc_csv": "out/tables/D5W1P28Jun25_split_qc.csv",
+  "envelope_png": "out/figs/D5W1P28Jun25_audio_envelope.png",
+  "clips_dir": "out/clips/D5W1P28Jun25"
+}

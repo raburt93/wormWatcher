@@ -1,0 +1,11 @@
+{
+  "video": "videos/D5W1P28Jun25.m4v",
+  "fps": 30.00059678442807,
+  "frames_seen": 49265,
+  "roi_ids": [
+    "worm_right"
+  ],
+  "bg_model": "mog2",
+  "previews_saved": 50,
+  "motion_energy_png": "out/figs/D5W1P28Jun25_motion_energy.png"
+}
