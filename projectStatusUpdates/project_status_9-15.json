@@ -1,0 +1,100 @@
+{
+  "project": "WormWatcher - Honest Worm Video Analyst",
+  "updated_at": "2025-09-16T01:12:03Z",
+  "history": [
+    {
+      "updated_at": "2025-09-16T01:12:03Z",
+      "summary": "Hybrid audio+flash splitter finalized; 50/50 trials found for D5W1P28Jun25; added unpaired-capable splitter; verified FPS CFR-like; ruff-cleaned code; Makefile targets updated.",
+      "videos": {
+        "D5W1P28Jun25": {
+          "found_trials": 50,
+          "method": "hybrid(audio+flash)"
+        }
+      },
+      "modules": [
+        "src/verify_fps.py",
+        "src/split_audio.py",
+        "src/split_unpaired.py"
+      ]
+    }
+  ],
+  "current": {
+    "project": "WormWatcher - Honest Worm Video Analyst",
+    "updated_at": "2025-09-16T01:12:03Z",
+    "environment": {
+      "python_min": "3.10",
+      "tools": [
+        "ffmpeg",
+        "ruff"
+      ],
+      "deps_added": [
+        "scipy",
+        "soundfile"
+      ]
+    },
+    "videos": {
+      "D5W1P28Jun25": {
+        "sha256": "3fde04fbcdfdb0ec86f09a078269bf1cde74336eede7b75930698082b34dd078",
+        "fps": 30.00059678442807,
+        "frames": 49265,
+        "duration_s": 1642.134,
+        "ingest_json": "/mnt/data/D5W1P28Jun25.ingest.json",
+        "preprocess_json": "/mnt/data/D5W1P28Jun25.preprocess.json",
+        "split": {
+          "trials_csv": "/mnt/data/D5W1P28Jun25_trials.csv",
+          "qc_csv": "/mnt/data/D5W1P28Jun25_split_qc.csv",
+          "method": "hybrid(audio+flash)",
+          "min_start_s": 600.0,
+          "expected_trials": 50,
+          "found_trials": 50
+        }
+      }
+    },
+    "code_updates": {
+      "modules_added": [
+        "src/verify_fps.py",
+        "src/split_audio.py",
+        "src/split_unpaired.py"
+      ],
+      "make_targets": [
+        "verify",
+        "split_audio",
+        "split_unpaired",
+        "diag"
+      ],
+      "linting": {
+        "tool": "ruff",
+        "actions": [
+          "ruff check --fix",
+          "ruff format"
+        ]
+      }
+    },
+    "decisions": [
+      "Treat FPS as CFR-like with timebase quantization; no hard pin",
+      "Enforce acclimation gate at >=600 s",
+      "Clips are 8 s (1 s lead + 6 s tone + 1 s tail)",
+      "Trials CSV schema kept minimal: onset_s,duration_s,label; provenance in QC CSV/JSON"
+    ],
+    "artifacts": {
+      "tables": [
+        "/mnt/data/D5W1P28Jun25_trials.csv",
+        "/mnt/data/D5W1P28Jun25_split_qc.csv"
+      ],
+      "clips_dir": "out/clips/D5W1P28Jun25",
+      "manifests": [
+        "out/meta/D5W1P28Jun25.split.json"
+      ]
+    },
+    "open_questions": [
+      "Confirm light ROI rectangle for future sessions (currently using full frame/ROI).",
+      "Provide schedule CSV or grid params when using split_unpaired.py in unpaired designs.",
+      "Confirm expected_light_offset if different from 4.0 s in other rigs."
+    ],
+    "next_actions": [
+      "Run split_unpaired.py with a schedule for unpaired experiments.",
+      "Proceed to per-trial feature extraction (freezing/retraction) on generated clips.",
+      "Add spectrogram-based fallback in audio finder if future sessions have low SNR."
+    ]
+  }
+}

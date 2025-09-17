@@ -45,3 +45,44 @@ split_unpaired: ## Classify trials per schedule (audio/light/paired/unpaired) an
 	else \
 		python -m src.split_unpaired config.yaml $(VIDEO) --grid-t0 611 --grid-period 12 --grid-count 50 --min-start-s 600 --trial-dur 6 --lead 1 --tail 1 --pre-win 2 --post-win 8 --pair-tol 0.6 --expected-light-offset 4.0; \
 	fi
+# -------- WormWatcher analysis targets --------
+# Config & Python
+CONFIG ?= config.yaml
+PY     ?= python
+
+# Robust paths: your scripts accept both out/logs and out_dir/logs_dir,
+# but if you haven't patched detect_track yet, do that once (see below).
+# Clips directory (edit if you use a different stem):
+CLIPS_DIR ?= out/clips/D5W1P28Jun25
+
+.PHONY: detect features trials qc analyze detect_all print
+
+print:
+	@echo "CONFIG=$(CONFIG)"
+	@echo "PY=$(PY)"
+	@echo "CLIPS_DIR=$(CLIPS_DIR)"
+
+# Run detect_track on a single file: make detect VIDEO=path/to/trial_001_CS.mp4
+detect:
+	@test -n "$(VIDEO)" || (echo "ERROR: set VIDEO=path/to/clip.mp4"; exit 2)
+	$(PY) -m src.detect_track $(CONFIG) $(VIDEO)
+
+features:
+	$(PY) -m src.features $(CONFIG)
+
+trials:
+	$(PY) -m src.trials $(CONFIG)
+
+qc:
+	$(PY) -m src.qc $(CONFIG)
+
+# Full chain for one file (requires VIDEO=...)
+analyze: detect features trials qc
+
+# Run detect_track on ALL clips under CLIPS_DIR
+detect_all:
+	@test -d "$(CLIPS_DIR)" || (echo "ERROR: CLIPS_DIR '$(CLIPS_DIR)' not found"; exit 2)
+	@find "$(CLIPS_DIR)" -type f -name 'trial_*_*.mp4' | while read f; do \
+	  echo "== Detect: $$f"; \
+	  $(PY) -m src.detect_track $(CONFIG) "$$f" || exit $$?; \
+	done

@@ -1,62 +1,44 @@
 project: wormWatcher
-random_seed: 1337
+seed: 1337
 
 paths:
-  videos: videos
-  events: events
-  out: out
-  logs: logs
+  clips_dir: out/clips/D5W1P28Jun25
+  out_dir: out
+  logs_dir: logs
 
-outputs:
-  csv_mirror: false        # flip to true if you want CSV alongside Parquet
-  snapshot_stride: 1000    # save a frame every N frames during ingest
-
-ingest:
-  hash_algo: sha256
-  max_frames: null         # set to an int for quick tests
-
-preprocess:
-  stabilize: false
-  denoise: "gaussian"               # or "none"
-  gaussian_ksize: 5                 # odd
-  bg_model: "mog2"
-  bg_history: 500
-  bg_var_threshold: 16
-
-detect_track:
-  min_area: 50
-  max_area: 50000
-  max_jump: 40                      # px between consecutive frames
-  morph_kernel: 3
-  timestamps_from_ffprobe: false    # keep false; CFR-like is fine
+video:
+  fps_override: null            # set a number if metadata is wrong (e.g., 30.0)
+  timestamps_from_ffprobe: false
+  blur_ksize: 5
+  thresh_method: otsu           # or 'adaptive'
+  min_area_px: 50
+  max_area_px: 50000
+  erosion_iters: 1
+  dilation_iters: 2
   rois:
     mode: rects
     rects:
-      - id: worm_right
-        x: 640
+      - id: worm_right          # your ROI
+        x: 580
         y: 0
-        w: 640
+        w: 700
         h: 720
+
+tracking:
+  max_jump_px: 40
+  smooth_window: 5
+  interp_gaps: 2
+
 features:
-  freeze_speed_thresh: 0.2 # px/frame
-  min_freeze_frames: 15
+  px_per_mm: null               # set if calibrated
+  freeze_speed_thresh_px_s: 6.0 # 0.2 px/frame @ 30 fps -> 6.0 px/s
+  freeze_min_bout_s: 0.5        # 15 frames @ 30 fps -> 0.5 s
 
 trials:
-  events_csv: null         # path under events/, or null to infer later
-  baseline_s: 5
-  response_s: 10
+  lead_s: 1.0                   # 1 s baseline
+  tone_s: 6.0                   # 6 s CS
+  tail_s: 1.0                   # 1 s tail
+  us_window_s: [5.0, 7.0]       # last 2 s of the CS window
 
-detect_track:
-  min_area: 50
-  max_area: 50000
-  max_jump: 40
-  rois:
-    mode: rects
-    rects:
-      - id: worm_right
-        x: 640   # right half (assuming 1280x720)
-        y: 0
-        w: 640
-        h: 720
 qc:
-  overlay_stride: 5     # draw every Nth frame into the MP4/snapshots
+  overlay_stride: 5

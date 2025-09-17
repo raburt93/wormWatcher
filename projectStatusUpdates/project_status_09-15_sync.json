@@ -1,0 +1,47 @@
+{
+  "project": "WormWatcher - Honest Worm Video Analyst (HWVA)",
+  "status_date_local": "2025-09-15",
+  "repo": {
+    "url": "https://github.com/raburt93/wormWatcher",
+    "notes": [
+      "Repo is public; includes Makefile, requirements.txt, and README with quick-start commands."
+    ]
+  },
+  "workspace": {
+    "path_root": "/mnt/data",
+    "video": {
+      "file": "D5W1P28Jun25.m4v",
+      "size_bytes": 164869142,
+      "sha256": "3fde04fbcdfdb0ec86f09a078269bf1cde74336eede7b75930698082b34dd078"
+    },
+    "artifacts_present": {
+      "trials_csv": false,
+      "split_qc_csv": false
+    }
+  },
+  "source_status_files": [
+    "project_status_9-14.json",
+    "project_status_9-15.json"
+  ],
+  "synthesis": {
+    "what_we_have": [
+      "Video present locally with verified SHA-256.",
+      "Repository link shared; code appears to include Makefile and pipeline scaffolding."
+    ],
+    "what_we_do_not_have_here": [
+      "The trials CSV and split QC CSV referenced in project_status_9-15.json are not present under /mnt/data in this workspace."
+    ]
+  },
+  "next_commands_unix": [
+    "python3 -m venv project_root/env && source project_root/env/bin/activate",
+    "pip install -r requirements.txt",
+    "python project_root/src/sanity.py project_root/videos/EXAMPLE.mp4",
+    "# Then, run the splitter once repo code is available locally:",
+    "python -m src.split_audio config.yaml videos/D5W1P28Jun25.m4v --min-start-s 600 --expected 50 --trial-dur 6 --lead 1 --tail 1 --reencode"
+  ],
+  "clarification_gates": [
+    "Provide the light ROI rectangle (x,y,w,h) for flash validation.",
+    "Confirm if camera timing should be treated as constant-FPS (CFR-like) or provide an explicit fps_override.",
+    "For unpaired runs, provide an events CSV (onsets/durations/labels) or confirm audio/flash inference."
+  ]
+}
