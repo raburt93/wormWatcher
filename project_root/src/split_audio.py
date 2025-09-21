@@ -97,6 +97,18 @@ def build_roi_mask(meta: dict, cfg: dict) -> np.ndarray:
     return mask
 
 
+def export_roi_mask_png(meta: dict, cfg: dict, out_dir: Path, stem: str) -> Path:
+    """Save the current ROI mask as a PNG for provenance; return its path."""
+    mask = build_roi_mask(meta, cfg)
+    roi_png = out_dir / "qc" / f"{stem}_roi_mask.png"
+    ensure_dir(roi_png.parent)
+    # Save binary mask (0/255)
+    import imageio.v2 as iio
+
+    iio.imwrite(roi_png, mask)
+    return roi_png
+
+
 def detect_flashes(
     video: Path,
     meta: dict,
@@ -420,7 +432,9 @@ def validate_light(
 # ---------- cutting ----------
 
 
-def cut_ffmpeg(src: Path, dst: Path, start_s: float, dur_s: float) -> None:
+def cut_ffmpeg(
+    src: Path, dst: Path, start_s: float, dur_s: float, fps_out: Optional[float] = None
+) -> None:
     ensure_dir(dst.parent)
     cmd = [
         "ffmpeg",
@@ -432,6 +446,10 @@ def cut_ffmpeg(src: Path, dst: Path, start_s: float, dur_s: float) -> None:
         str(src),
         "-t",
         f"{dur_s:.3f}",
+    ]
+    if fps_out is not None and fps_out > 0:
+        cmd += ["-r", f"{fps_out:.6f}"]  # enforce CFR at ingest fps
+    cmd += [
         "-c:v",
         "libx264",
         "-crf",
@@ -481,8 +499,13 @@ def main() -> int:
             tail = float(sys.argv[i + 1])
 
     cfg = yaml.safe_load(cfg_path.read_text())
-    paths = cfg["paths"]
-    out_dir = Path(paths["out"])
+    paths = cfg.get("paths", {})
+    out_dir = Path(paths.get("out", "out"))
+    logs_dir = Path(paths.get("logs", "logs"))
+    events_dir = Path(paths.get("events", "events"))
+    ensure_dir(out_dir)
+    ensure_dir(logs_dir)
+    ensure_dir(events_dir)
     stem = video_path.stem
 
     ingest = read_ingest(out_dir, stem)
@@ -651,7 +674,44 @@ def main() -> int:
         dur = float(lead + trial_dur + tail)
         label = r["label"]
         dst = clips_dir / f"trial_{i:03d}_{label}.mp4"
-        cut_ffmpeg(video_path, dst, start, dur)
+        cut_ffmpeg(video_path, dst, start, dur, fps_out=fps)
+
+    # 7b) Build events CSV for downstream modules (trial_id, clip_path, cs_frame, us_frame, roi_path)
+    # Derive directories and stable CFR fps for frame math
+    ensure_dir(events_dir)
+    roi_png = export_roi_mask_png(ingest, cfg, out_dir, stem)
+    events_csv = events_dir / f"{stem}_trials.csv"
+
+    clip_fps = fps  # we enforced CFR at this fps when cutting
+
+    def _frame_at(seconds_from_clip_start: float) -> int:
+        return int(round(seconds_from_clip_start * clip_fps))
+
+    # CS happens 1.0 s into each 8 s clip (lead = 1.0)
+    cs_frame_idx = _frame_at(lead)
+
+    with events_csv.open("w", newline="") as f:
+        w = csv.DictWriter(
+            f,
+            fieldnames=["trial_id", "clip_path", "cs_frame", "us_frame", "roi_path"],
+        )
+        w.writeheader()
+        for i, r in enumerate(rows, start=1):
+            trial_id = f"trial_{i:03d}"
+            label = r["label"]
+            clip_name = f"{trial_id}_{label}.mp4"
+            clip_path = str((clips_dir / clip_name).as_posix())
+            # US onset is 4.0 s after CS onset for paired trials; blank otherwise
+            us_frame_idx = _frame_at(lead + 4.0) if label != "sound_only" else ""
+            w.writerow(
+                {
+                    "trial_id": trial_id,
+                    "clip_path": clip_path,
+                    "cs_frame": cs_frame_idx,
+                    "us_frame": us_frame_idx,
+                    "roi_path": str(roi_png.as_posix()),
+                }
+            )
 
     # 8) Write split manifest + log
     split_meta = {
@@ -670,10 +730,12 @@ def main() -> int:
         "qc_csv": str(qc_csv),
         "envelope_png": str(fig_path) if fig_path else None,
         "clips_dir": str(clips_dir),
+        "events_csv": str(events_csv),
+        "roi_png": str(roi_png),
     }
     write_json(out_dir / "meta" / f"{stem}.split.json", split_meta)
     write_jsonl(
-        Path(paths["logs"]) / "split_audio.jsonl",
+        logs_dir / "split_audio.jsonl",
         [
             {
                 "stage": "split_audio",

@@ -3,42 +3,75 @@ seed: 1337
 
 paths:
   clips_dir: out/clips/D5W1P28Jun25
-  out_dir: out
-  logs_dir: logs
+  out: out
+  logs: logs
+  events: events
 
-video:
-  fps_override: null            # set a number if metadata is wrong (e.g., 30.0)
-  timestamps_from_ffprobe: false
-  blur_ksize: 5
-  thresh_method: otsu           # or 'adaptive'
-  min_area_px: 50
-  max_area_px: 50000
-  erosion_iters: 1
-  dilation_iters: 2
-  rois:
-    mode: rects
-    rects:
-      - id: worm_right          # your ROI
-        x: 580
-        y: 0
-        w: 700
-        h: 720
+# video & ROI
+fps_override:          # optional
+roi:
+  apply: false
+  erosion_px: 2
 
-tracking:
-  max_jump_px: 40
-  smooth_window: 5
-  interp_gaps: 2
+# segmentation
+seg:
+  bg_method: median
+  bg_frames: 60
+  threshold: otsu        # options: otsu | adaptive
+  adaptive_block: 41      # odd int
+  adaptive_C: 3
+  keep_largest: true
+  min_area: 1500
+  max_area: 200000
+  morph_open: 2
+  morph_close: 4
 
-features:
-  px_per_mm: null               # set if calibrated
-  freeze_speed_thresh_px_s: 6.0 # 0.2 px/frame @ 30 fps -> 6.0 px/s
-  freeze_min_bout_s: 0.5        # 15 frames @ 30 fps -> 0.5 s
+# skeleton
+skeleton:
+  method: medial_axis    # medial_axis | thin
+  spur_px: 6
+  bridge_gaps_px: 2
+  continuity_lambda: 0.5
 
-trials:
-  lead_s: 1.0                   # 1 s baseline
-  tone_s: 6.0                   # 6 s CS
-  tail_s: 1.0                   # 1 s tail
-  us_window_s: [5.0, 7.0]       # last 2 s of the CS window
+# clitellum (width profile)
+clitellum:
+  search_range_pct: [0.25, 0.60]
+  smooth_win: 9
+  temporal_win: 7
+  min_prominence_px: 2.5
 
-qc:
-  overlay_stride: 5
+# orientation
+orientation:
+  window_frames: 5
+  flip_hysteresis: 3
+  tip_curv_win: 5
+  clitellum_bias: 0.2
+
+# motion & freezing
+motion:
+  diff_thresh: 12
+  freeze_motion_px: 250
+  min_freeze_s: 0.5
+
+# retraction detection
+retract:
+  min_dur_s: 0.5
+  frac_body_len: 0.05
+
+# events CSV schema (example)
+events_csv: out/tables/D5W1P28Jun25_trials.csv
+source_video: videos/D5W1P28Jun25.m4v
+trial_id_col: 
+clips_col: 
+cs_frame_col: 
+us_frame_col: 
+roi_col:
+
+id:
+  prefix: T      # change to 'W' if you prefer
+  digits: 3
+  start: 1
+
+
+# workers
+workers: 3

@@ -9,20 +9,11 @@
   "trial_duration_s": 6.0,
   "lead_s": 1.0,
   "tail_s": 1.0,
-  "roi": {
-    "mode": "rects",
-    "rects": [
-      {
-        "id": "worm_right",
-        "x": 640,
-        "y": 0,
-        "w": 640,
-        "h": 720
-      }
-    ]
-  },
+  "roi": {},
   "trials_csv": "out/tables/D5W1P28Jun25_trials.csv",
   "qc_csv": "out/tables/D5W1P28Jun25_split_qc.csv",
-  "envelope_png": "out/figs/D5W1P28Jun25_audio_envelope.png",
-  "clips_dir": "out/clips/D5W1P28Jun25"
+  "envelope_png": null,
+  "clips_dir": "out/clips/D5W1P28Jun25",
+  "events_csv": "events/D5W1P28Jun25_trials.csv",
+  "roi_png": "out/qc/D5W1P28Jun25_roi_mask.png"
 }

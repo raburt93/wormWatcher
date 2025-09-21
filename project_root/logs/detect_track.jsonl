@@ -1,1 +1,105 @@
 {"stage":"detect_track","video":"out/clips/D5W1P28Jun25/trial_001_CS.mp4","t":"2025-09-17T02:21:04Z","level":"ERROR","msg":"cannot_open"}
+{"trial_id": "trial_001", "clip": "out/clips/D5W1P28Jun25/trial_001_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 798.1736450195312, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-19T04:20:44Z"}
+{"trial_id": "trial_001", "clip": "out/clips/D5W1P28Jun25/trial_001_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 798.1736450195312, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_002", "clip": "out/clips/D5W1P28Jun25/trial_002_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 506.801025390625, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_003", "clip": "out/clips/D5W1P28Jun25/trial_003_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 784.2985229492188, "n_retractions": 3, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_004", "clip": "out/clips/D5W1P28Jun25/trial_004_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 787.4700927734375, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_005", "clip": "out/clips/D5W1P28Jun25/trial_005_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 764.055908203125, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_006", "clip": "out/clips/D5W1P28Jun25/trial_006_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 453.78529357910156, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_007", "clip": "out/clips/D5W1P28Jun25/trial_007_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 93.66905212402344, "n_retractions": 6, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_008", "clip": "out/clips/D5W1P28Jun25/trial_008_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 752.6416625976562, "n_retractions": 6, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_009", "clip": "out/clips/D5W1P28Jun25/trial_009_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 240, "med_len": 289.9188232421875, "n_retractions": 4, "n_freeze": 4, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_010", "clip": "out/clips/D5W1P28Jun25/trial_010_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_011", "clip": "out/clips/D5W1P28Jun25/trial_011_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 791.0975341796875, "n_retractions": 4, "n_freeze": 4, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_012", "clip": "out/clips/D5W1P28Jun25/trial_012_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 503.9015808105469, "n_retractions": 4, "n_freeze": 4, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_013", "clip": "out/clips/D5W1P28Jun25/trial_013_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 783.88427734375, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_014", "clip": "out/clips/D5W1P28Jun25/trial_014_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 776.2275390625, "n_retractions": 4, "n_freeze": 4, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_015", "clip": "out/clips/D5W1P28Jun25/trial_015_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 753.2274169921875, "n_retractions": 7, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_016", "clip": "out/clips/D5W1P28Jun25/trial_016_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 814.8792724609375, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_017", "clip": "out/clips/D5W1P28Jun25/trial_017_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 288.6345520019531, "n_retractions": 7, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_018", "clip": "out/clips/D5W1P28Jun25/trial_018_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 363.864990234375, "n_retractions": 7, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_019", "clip": "out/clips/D5W1P28Jun25/trial_019_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 815.6832885742188, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_020", "clip": "out/clips/D5W1P28Jun25/trial_020_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_021", "clip": "out/clips/D5W1P28Jun25/trial_021_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 324.20306396484375, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_022", "clip": "out/clips/D5W1P28Jun25/trial_022_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 284.4629821777344, "n_retractions": 8, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_023", "clip": "out/clips/D5W1P28Jun25/trial_023_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 769.683349609375, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_024", "clip": "out/clips/D5W1P28Jun25/trial_024_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 322.20306396484375, "n_retractions": 6, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_025", "clip": "out/clips/D5W1P28Jun25/trial_025_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 405.7644958496094, "n_retractions": 9, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_026", "clip": "out/clips/D5W1P28Jun25/trial_026_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 319.54620361328125, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_027", "clip": "out/clips/D5W1P28Jun25/trial_027_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 289.6345520019531, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_028", "clip": "out/clips/D5W1P28Jun25/trial_028_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 93.6690444946289, "n_retractions": 3, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_029", "clip": "out/clips/D5W1P28Jun25/trial_029_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 90.66905212402344, "n_retractions": 6, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_030", "clip": "out/clips/D5W1P28Jun25/trial_030_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_031", "clip": "out/clips/D5W1P28Jun25/trial_031_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 342.75946044921875, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_032", "clip": "out/clips/D5W1P28Jun25/trial_032_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 322.7888488769531, "n_retractions": 6, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_033", "clip": "out/clips/D5W1P28Jun25/trial_033_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 168.76449584960938, "n_retractions": 3, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_034", "clip": "out/clips/D5W1P28Jun25/trial_034_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 287.877197265625, "n_retractions": 5, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_035", "clip": "out/clips/D5W1P28Jun25/trial_035_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 239.47515869140625, "n_retractions": 6, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_036", "clip": "out/clips/D5W1P28Jun25/trial_036_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 323.78887939453125, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_037", "clip": "out/clips/D5W1P28Jun25/trial_037_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 91.66905212402344, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_038", "clip": "out/clips/D5W1P28Jun25/trial_038_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 325.20306396484375, "n_retractions": 3, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_039", "clip": "out/clips/D5W1P28Jun25/trial_039_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 344.3452453613281, "n_retractions": 3, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_040", "clip": "out/clips/D5W1P28Jun25/trial_040_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_041", "clip": "out/clips/D5W1P28Jun25/trial_041_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 327.85992431640625, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_042", "clip": "out/clips/D5W1P28Jun25/trial_042_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 44.94112777709961, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_043", "clip": "out/clips/D5W1P28Jun25/trial_043_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 247.71780395507812, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_044", "clip": "out/clips/D5W1P28Jun25/trial_044_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 343.7594299316406, "n_retractions": 4, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_045", "clip": "out/clips/D5W1P28Jun25/trial_045_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 316.96044921875, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_046", "clip": "out/clips/D5W1P28Jun25/trial_046_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 289.39190673828125, "n_retractions": 4, "n_freeze": 5, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_047", "clip": "out/clips/D5W1P28Jun25/trial_047_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 314.3746337890625, "n_retractions": 5, "n_freeze": 3, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_048", "clip": "out/clips/D5W1P28Jun25/trial_048_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 172.59292602539062, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_049", "clip": "out/clips/D5W1P28Jun25/trial_049_paired.mp4", "ok": true, "fps": 30.000596996166657, "frames": 241, "med_len": 282.877197265625, "n_retractions": 4, "n_freeze": 2, "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_050", "clip": "out/clips/D5W1P28Jun25/trial_050_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:24:22Z"}
+{"trial_id": "trial_001", "clip": "out/clips/D5W1P28Jun25/trial_001_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:50:12Z"}
+{"trial_id": "trial_001", "clip": "out/clips/D5W1P28Jun25/trial_001_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_002", "clip": "out/clips/D5W1P28Jun25/trial_002_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_003", "clip": "out/clips/D5W1P28Jun25/trial_003_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_004", "clip": "out/clips/D5W1P28Jun25/trial_004_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_005", "clip": "out/clips/D5W1P28Jun25/trial_005_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_006", "clip": "out/clips/D5W1P28Jun25/trial_006_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_007", "clip": "out/clips/D5W1P28Jun25/trial_007_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_008", "clip": "out/clips/D5W1P28Jun25/trial_008_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_009", "clip": "out/clips/D5W1P28Jun25/trial_009_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_010", "clip": "out/clips/D5W1P28Jun25/trial_010_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_011", "clip": "out/clips/D5W1P28Jun25/trial_011_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_012", "clip": "out/clips/D5W1P28Jun25/trial_012_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_013", "clip": "out/clips/D5W1P28Jun25/trial_013_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_014", "clip": "out/clips/D5W1P28Jun25/trial_014_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_015", "clip": "out/clips/D5W1P28Jun25/trial_015_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_016", "clip": "out/clips/D5W1P28Jun25/trial_016_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_017", "clip": "out/clips/D5W1P28Jun25/trial_017_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_018", "clip": "out/clips/D5W1P28Jun25/trial_018_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_019", "clip": "out/clips/D5W1P28Jun25/trial_019_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_020", "clip": "out/clips/D5W1P28Jun25/trial_020_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_021", "clip": "out/clips/D5W1P28Jun25/trial_021_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_022", "clip": "out/clips/D5W1P28Jun25/trial_022_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_023", "clip": "out/clips/D5W1P28Jun25/trial_023_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_024", "clip": "out/clips/D5W1P28Jun25/trial_024_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_025", "clip": "out/clips/D5W1P28Jun25/trial_025_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_026", "clip": "out/clips/D5W1P28Jun25/trial_026_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_027", "clip": "out/clips/D5W1P28Jun25/trial_027_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_028", "clip": "out/clips/D5W1P28Jun25/trial_028_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_029", "clip": "out/clips/D5W1P28Jun25/trial_029_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_030", "clip": "out/clips/D5W1P28Jun25/trial_030_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_031", "clip": "out/clips/D5W1P28Jun25/trial_031_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_032", "clip": "out/clips/D5W1P28Jun25/trial_032_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_033", "clip": "out/clips/D5W1P28Jun25/trial_033_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_034", "clip": "out/clips/D5W1P28Jun25/trial_034_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_035", "clip": "out/clips/D5W1P28Jun25/trial_035_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_036", "clip": "out/clips/D5W1P28Jun25/trial_036_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_037", "clip": "out/clips/D5W1P28Jun25/trial_037_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_038", "clip": "out/clips/D5W1P28Jun25/trial_038_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_039", "clip": "out/clips/D5W1P28Jun25/trial_039_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_040", "clip": "out/clips/D5W1P28Jun25/trial_040_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_041", "clip": "out/clips/D5W1P28Jun25/trial_041_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_042", "clip": "out/clips/D5W1P28Jun25/trial_042_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_043", "clip": "out/clips/D5W1P28Jun25/trial_043_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_044", "clip": "out/clips/D5W1P28Jun25/trial_044_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_045", "clip": "out/clips/D5W1P28Jun25/trial_045_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_046", "clip": "out/clips/D5W1P28Jun25/trial_046_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_047", "clip": "out/clips/D5W1P28Jun25/trial_047_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_048", "clip": "out/clips/D5W1P28Jun25/trial_048_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_049", "clip": "out/clips/D5W1P28Jun25/trial_049_paired.mp4", "ok": false, "error": "KeyError('diff_thresh')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "trial_050", "clip": "out/clips/D5W1P28Jun25/trial_050_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:58:45Z"}
+{"trial_id": "T001", "status": "error", "msg": "cannot_open_source:video/D5W1P28Jun25.m4v"}
+{"trial_id": "T001", "status": "ok", "frames": 180, "written": 180, "fps": 30.00059678442807, "source": "videos/D5W1P28Jun25.m4v[18342:18522]"}

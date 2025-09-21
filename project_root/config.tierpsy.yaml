@@ -1,0 +1,44 @@
+# --- IO / columns ---
+events_csv: out/tables/D5W1P28Jun25_trials.csv     # update per video
+trial_id_col: trial_id
+clips_col: clip_path
+cs_frame_col: cs_frame
+us_frame_col: us_frame          # leave blank/omit if CS-only
+roi_col: roi_path               # optional; else use roi_default
+paths:
+  out: out
+
+# --- video ---
+fps_override:                    # usually blank, read from media
+roi_default:                     # optional path to ROI mask
+
+# --- QC ---
+qc:
+  overlay: true
+  overlay_ext: avi          # avi|mp4  (avi is safest)
+  overlay_codec: mjpg       # mjpg|mp4v|avc1 (MJPG is safest)
+  snapshots: true
+  snapshot_n: 5             # how many PNG frames to save per trial (first N)
+
+
+# --- segmentation (Tierpsy-ish) ---
+seg:
+  bg_method: median
+  bg_frames: 60          # more robust background
+  threshold: otsu        # NEW: switch from fixed to Otsu
+  min_area: 1500         # raise: reject small blobs
+  max_area: 200000       # guard against ROI filling
+  morph_open: 2          # remove salt noise
+  morph_close: 4         # bridge gaps along body
+  keep_largest: true     # NEW: only the biggest component survives
+
+# --- motion / freezing (ezTrack-like) ---
+motion:
+  diff_thresh: 12                # per-pixel grayscale delta for "changed" pixels
+  freeze_motion_px: 250          # <= this => frozen
+  min_freeze_s: 0.5              # freeze must last ≥0.5 s
+
+# --- retraction (Tierpsy reversal heuristic) ---
+retract:
+  min_dur_s: 0.5                 # sustained backward ≥0.5 s
+  frac_body_len: 0.05            # net head→clitellum shortening ≥5% body length

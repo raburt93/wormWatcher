@@ -1,3 +1,4 @@
 {"stage":"split_audio","video":"videos/D5W1P28Jun25.m4v","level":"INFO","msg":"ok","found_trials":0,"expected":50}
 {"stage":"split_audio","video":"videos/D5W1P28Jun25.m4v","level":"INFO","msg":"ok","found_trials":45,"expected":50}
 {"stage":"split_audio","video":"videos/D5W1P28Jun25.m4v","level":"INFO","msg":"ok","found_trials":50,"expected":50}
+{"stage":"split_audio","video":"videos/D5W1P28Jun25.m4v","level":"INFO","msg":"ok","found_trials":50,"expected":50}
