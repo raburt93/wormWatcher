@@ -7,30 +7,52 @@ paths:
   logs: logs
   events: events
 
+preproc:
+  blackhat_ksize: 9   # 0 to disable; 7–15 works well for thin, dark worms
+
 # video & ROI
 fps_override:          # optional
 roi:
-  apply: false
+  apply: true
   erosion_px: 2
+  # rectangle as fractions of width/height: [x0, y0, w, h]
+  rect_frac: [0.5, 0.02, 0.46, 0.96]   # right ~45% of the frame; tweak if needed
+  min_overlap_frac: 0.20                # at least 20% of blob inside ROI to be eligible
+  anchor_x_range: [0.60, 1.00]          # prefer centroids in right 40% (optional)
+  anchor_boost: 0.50                    # extra score weight for candidates in range
+  border_kill_px: 0
 
 # segmentation
 seg:
   bg_method: median
   bg_frames: 60
-  threshold: otsu        # options: otsu | adaptive
-  adaptive_block: 41      # odd int
-  adaptive_C: 3
+  foreground: dark    # dark|bright (use dark for your clips)
+  threshold: adaptive        # options: otsu | adaptive
+  adaptive_block: 51      # odd int
+  adaptive_C: 5
   keep_largest: true
   min_area: 1500
-  max_area: 200000
+  max_area: 80000
   morph_open: 2
-  morph_close: 4
+  morph_close: 6
+  geom:
+    min_axis_ratio: 2.5
+    max_axis_ratio: 25.0
 
+  thickness:          # estimated diameter from distance transform
+    min_px: 2.0
+    max_px: 12.0
+
+  contrast:           # local ring contrast (ring_mean - inside_mean)
+    ring_px: 8
+    min_delta: 8.0    # must be at least 8 gray levels darker than the ring
+
+  
 # skeleton
 skeleton:
   method: medial_axis    # medial_axis | thin
-  spur_px: 6
-  bridge_gaps_px: 2
+  spur_px: 10
+  bridge_gaps_px: 3
   continuity_lambda: 0.5
 
 # clitellum (width profile)
@@ -72,6 +94,17 @@ id:
   digits: 3
   start: 1
 
-
+qc:
+  overlay: true
+  overlay_ext: avi
+  overlay_codec: mjpg
+  snapshots: true
+  snapshot_n: 5
+  draw_roi: true
 # workers
 workers: 3
+
+motion:
+  use_temporal_gate: true
+  diff_thresh: 12
+  min_moving_frac: 0.01

@@ -48,6 +48,20 @@ def load_yaml(path):
         return yaml.safe_load(f)
 
 
+def _make_rect_mask_from_frac(shape_hw, rect_frac):
+    """rect_frac = [x0, y0, w, h] in fractions of (W,H)"""
+    H, W = shape_hw
+    x0 = int(max(0, min(W - 1, round(rect_frac[0] * W))))
+    y0 = int(max(0, min(H - 1, round(rect_frac[1] * H))))
+    w = int(max(1, round(rect_frac[2] * W)))
+    h = int(max(1, round(rect_frac[3] * H)))
+    x1 = min(W, x0 + w)
+    y1 = min(H, y0 + h)
+    m = np.zeros((H, W), np.uint8)
+    m[y0:y1, x0:x1] = 255
+    return m, (x0, y0, x1, y1)
+
+
 def ensure_dirs(cfg):
     out = Path(cfg["paths"]["out"])
     (out / "tables").mkdir(parents=True, exist_ok=True)
@@ -429,6 +443,7 @@ def process_trial(row, cfg):
     written = 0
 
     # --- read/process loop ---
+    bbox_roi = None
     while True:
         cur_abs = start_frame + frame_idx
         if cur_abs >= end_frame:
@@ -438,6 +453,11 @@ def process_trial(row, cfg):
             break
 
         gray = cv2.cvtColor(fr, cv2.COLOR_BGR2GRAY)
+        if roi_mask is None:
+            roi_cfg = cfg.get("roi", {})
+            rect_frac = roi_cfg.get("rect_frac")
+            if rect_frac:
+                roi_mask, bbox_roi = _make_rect_mask_from_frac(gray.shape, rect_frac)
         mask = segment_frame(gray, bg, cfg, roi_mask)
         skel, path = make_skeleton(
             mask,
@@ -502,6 +522,11 @@ def process_trial(row, cfg):
                 step = max(1, len(path) // 150)
                 for y, x in path[::step]:
                     cv2.circle(ov, (x, y), 1, (0, 0, 255), -1)
+            if bbox_roi and cfg.get("qc", {}).get("draw_roi", True):
+                x0, y0, x1, y1 = bbox_roi
+                cv2.rectangle(
+                    ov, (x0, y0), (x1, y1), (255, 255, 0), 1
+                )  # yellow ROI box
             if clit_idx is not None and len(path) > clit_idx:
                 cy, cx = path[clit_idx]
                 cv2.circle(ov, (cx, cy), 3, (255, 0, 0), -1)  # blue: clitellum

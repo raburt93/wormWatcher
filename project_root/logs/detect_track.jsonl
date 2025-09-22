@@ -103,3 +103,5 @@
 {"trial_id": "trial_050", "clip": "out/clips/D5W1P28Jun25/trial_050_sound_only.mp4", "ok": false, "error": "ValueError('cannot convert float NaN to integer')", "utc": "2025-09-20T02:58:45Z"}
 {"trial_id": "T001", "status": "error", "msg": "cannot_open_source:video/D5W1P28Jun25.m4v"}
 {"trial_id": "T001", "status": "ok", "frames": 180, "written": 180, "fps": 30.00059678442807, "source": "videos/D5W1P28Jun25.m4v[18342:18522]"}
+{"trial_id": "T001", "status": "ok", "frames": 180, "written": 180, "fps": 30.00059678442807, "source": "videos/D5W1P28Jun25.m4v[18342:18522]"}
+{"trial_id": "T001", "status": "ok", "frames": 180, "written": 180, "fps": 30.00059678442807, "source": "videos/D5W1P28Jun25.m4v[18342:18522]"}
